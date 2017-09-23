@@ -14,7 +14,7 @@ namespace draughts
 				playerType _id;
 				char token;
 			public:
-				piece(int _x,int _y,playerType id) : x(_x),y(_y), _id(id),token('\0')
+				piece(int _x,int _y,playerType id) : x(_x),y(_y), _id(id),token('\32')
 				{
 					
 				}
