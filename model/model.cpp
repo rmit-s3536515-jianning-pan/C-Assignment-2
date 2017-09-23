@@ -31,13 +31,19 @@ void draughts::model::model::start_game(int plr1, int plr2) // ​starts​ ​a
 		{
 			p->setPlayernum(plr1);
 			p->setPlayerType(playerType::BLACK);
+			p->setPieces();
+			selected.push_back(std::move(p));
+			
 		}else if(count ==plr2)
 		{
 			p->setPlayernum(plr2);
 			p->setPlayerType(playerType::WHITE);
+			p->setPieces();
+			selected.push_back(std::move(p));
 		}
+		count++;
 	}
-	
+	std::cout << selected.size() << std::endl;
 	instance ->setCurrentId(plr1);
 }
 
@@ -53,13 +59,21 @@ std::string draughts::model::model::get_player_name(int id)
 
 char draughts::model::model::get_token(int x ,int y)
 {
-	/*
-	for(auto& p : selected) //get player
+	
+	char t;
+	//std::cout << selected.size() << std::endl; 
+	for(auto & p : selected)
 	{
-		player* play = p.get();
+		t = p->getPiece(x,y); //if found , will have token
+		//std::cout << t << std::endl;
+		if(t!='\0') // token is  empty
+		{
+			break;
+		}
 		
-	}*/
-    return '\0';
+		
+	}
+	return t;
 }
 
 void draughts::model::model::make_move(int playernum,

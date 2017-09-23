@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "piece.h"
+#include "normalPiece.h"
 #include "playerType.h"
 #include <vector>
 #include <memory>
@@ -22,9 +23,60 @@ namespace draughts
 					player(std::string name) : _name(name),_score(0),playernum(0)
 					{
 							_pieces.reserve(12); //reserve 12 pieces for this vector
-							if(_id == playerType::BLACK){
-								
+					}
+					
+					void setPieces()
+					{
+						if(_id == playerType::BLACK){
+								for(int i=1;i<=3;++i)
+								{
+									for(int j=1; j<=8;++j)
+									{
+										if(i%2!=0 && j%2==0){
+											
+											_pieces.push_back(std::make_unique<normalPiece>(i,j,_id));
+										}
+										else if(i%2==0 && j%2!=0)
+										{
+											_pieces.push_back(std::make_unique<normalPiece>(i,j,_id));
+										}
+									}
+								}
 							}
+							else if(_id==playerType::WHITE)
+							{
+								for(int i=6;i<=8;++i)
+								{
+									for(int j=1; j<=8;++j)
+									{
+										if(i%2!=0 && j%2==0){
+											
+											_pieces.push_back(std::make_unique<normalPiece>(i,j,_id));
+										}
+										else if(i%2==0 && j%2!=0)
+										{
+											_pieces.push_back(std::make_unique<normalPiece>(i,j,_id));
+										}
+									}
+								}
+							}
+					}
+					char getPiece(int x,int y){
+				//char token;
+						char token;
+						bool found = false;
+						for(auto& p : _pieces)
+						{
+							if(x==p->getX() && y==p->getY()) // same x and y
+							{
+								token = p->getToken();
+								found = true;
+								break;
+							}
+						}
+						if(found) return token;
+						
+						return '\0';
 					}
 					void setPlayerType(playerType id){_id=id;}
 					int getPlayernum(){return playernum;} //get the player number

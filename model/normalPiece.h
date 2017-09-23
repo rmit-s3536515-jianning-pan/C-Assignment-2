@@ -10,15 +10,37 @@ namespace draughts
 			class normalPiece : public piece
 			{
 				public:
-					virtual override void move(int sX,int sY,int eX,int eY)
-					{
-						
-					}
+				normalPiece(int _x,int _y,playerType id) : piece(_x,_y,id)
+				{
+						if(_id==playerType::BLACK)
+						{
+							token = 'x';
+						}
+						else if(_id==playerType::WHITE)
+						{
+							token = 'o';
+						}
 					
-					virtual override char draw(int sX,int sY)
+				}
+					  void move(int sX,int sY,int eX,int eY) override
 					{
-						
+							
 					}
+					/*
+					 char draw() override
+					{
+						if(_id==playerType::BLACK)
+						{
+							token = 'x';
+						}
+						else if(_id==playerType::WHITE)
+						{
+							token = 'o';
+						}
+						char p = token;
+						
+						return p;
+					}*/
 			};
 	}
 	
