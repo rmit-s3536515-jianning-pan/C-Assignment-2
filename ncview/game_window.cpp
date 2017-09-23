@@ -1,6 +1,6 @@
 #include "game_window.h"
 #include "../model/model.h"
-
+#include <iomanip> // setw
 draughts::ncview::game_window::game_window(const player_pair & theplayers) 
     : players(theplayers), quit(false)
 {
@@ -64,7 +64,8 @@ void draughts::ncview::game_window::print_top_row(void)
     std::cout << " ";
     for (xcount = 0; xcount < themodel->get_width(); ++xcount)
     {
-        std::cout << " " << xcount + 1 << " |";
+		std::cout << " " << xcount + 1 << " |";
+        
     }
     std::cout << std::endl;
 }
@@ -80,15 +81,23 @@ std::pair<int,int> draughts::ncview::game_window::strtocoord(
     return std::make_pair(x,y);
 }
 
-void draughts::ncview::game_window::print_row(int rownum)
+void draughts::ncview::game_window::print_row(int rownum) //modifed to get cleaner console 
 {
     int xcount;
     std::cout << rownum + 1;
     for(xcount = 0; xcount < themodel->get_width(); ++xcount)
     {
-        std::cout << " " << themodel->get_token(rownum + 1, xcount + 1)
+		char token = themodel->get_token(rownum + 1, xcount + 1); 
+		if(token=='\0')
+		{
+			 std::cout << " " << std::setw(3)
             << " |";
-    }
+		}
+		else{
+        std::cout << " " << token
+            << " |";
+		}
+	}
     std::cout << std::endl;
 }
 
