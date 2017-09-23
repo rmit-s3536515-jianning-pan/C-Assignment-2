@@ -10,7 +10,7 @@ void draughts::ncview::game_window::activate(void)
 {
     while(!quit)
     {
-        int playernum = EOF;
+        //int playernum = EOF;
         try
         {
             display_board();
@@ -26,8 +26,11 @@ void draughts::ncview::game_window::activate(void)
         }
         try
         {
+			int playernum = themodel->get_current_player();
             std::pair<std::pair<int,int>,std::pair<int,int>> move_coords;
             move_coords = get_move_input();
+			//std::cout <<  move_coords.first.first << move_coords.first.second <<  move_coords.second.first
+			//<< move_coords.second.second <<std::endl;
             themodel->make_move(playernum, move_coords.first.first, 
                 move_coords.first.second, move_coords.second.first,
                 move_coords.second.second);

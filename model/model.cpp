@@ -19,7 +19,14 @@ draughts::model::model * draughts::model::model::get_instance(void)
 
 int draughts::model::model::get_player_score(int playernum)
 {
-    return EOF;
+	int scores = 0;
+	for(auto & p : selected)
+	{
+		if(p->getPlayernum()==playernum){
+			scores = p->getScore();
+		}
+	}
+    return scores;
 }
 
 void draughts::model::model::start_game(int plr1, int plr2) // ​starts​ ​a​ ​new​ ​game​ ​with​ ​the​ ​specified​ ​player​ ​ids
@@ -43,29 +50,46 @@ void draughts::model::model::start_game(int plr1, int plr2) // ​starts​ ​a
 		}
 		count++;
 	}
-	std::cout << selected.size() << std::endl;
+	//std::cout << selected.size() << std::endl;
 	instance ->setCurrentId(plr1);
 }
 
-int draughts::model::model::get_winner()
+int draughts::model::model::get_winner() //if the player get 12 score in total, return 1 else return -1
 {
+	
+	for(auto & p : selected)
+	{
+		if(p->getPlayernum()==currentId){
+			if(p->getScore()==12)
+			{
+				return 1;
+			}
+		}
+	}
     return EOF;
 }
 
 std::string draughts::model::model::get_player_name(int id)
 {
-    return "";
+	std::string name;
+	for(auto & p : selected)
+	{
+		if(p->getPlayernum()==id){
+			name = p->getName();
+		}
+	}
+    return name;
 }
 
 char draughts::model::model::get_token(int x ,int y)
 {
 	
 	char t;
-	//std::cout << selected.size() << std::endl; 
+	
 	for(auto & p : selected)
 	{
 		t = p->getPiece(x,y); //if found , will have token
-		//std::cout << t << std::endl;
+		
 		if(t!='\0') // token is  empty
 		{
 			break;
@@ -79,6 +103,17 @@ char draughts::model::model::get_token(int x ,int y)
 void draughts::model::model::make_move(int playernum,
         int startx, int starty, int endx, int endy)
 {
+	//bool found = false;
+	for(auto& p : selected){
+		std::cout << p->getPlayernum() <<" " <<playernum << std::endl; // ???? playernum is -1 ???
+		if(p->getPlayernum()==playernum) //if the player number is equal to the current player
+		{
+			std::cout << "in the model class at make_move function , with the correct number" << std::endl;
+			p->movePiece(startx,starty,endx,endy);
+			break;
+		}
+		std::cout << "in the model class at make_move function" << std::endl;
+	}
 }
 
 void draughts::model::model::add_player(const std::string& p) // modified
@@ -93,7 +128,7 @@ bool draughts::model::model::player_exists(const std::string& pname)
 
 int draughts::model::model::get_current_player(void)
 {
-    return EOF;
+    return currentId;
 }
 
 std::map<int, std::string> draughts::model::model::get_player_list(void) 

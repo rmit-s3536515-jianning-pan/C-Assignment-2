@@ -8,6 +8,7 @@
 #include <chrono>
 #include "player.h"
 #include "piece.h"
+#include "normalPiece.h"
 #include "playerType.h"
 
 #pragma once
@@ -24,7 +25,7 @@ namespace draughts
 			
 			std::vector<std::unique_ptr<player>> selected; // store the selected players
 			
-			int currentId; //track for the current player
+			int currentId = 0; //track for the current player
 			
             model(void);
             bool player_exists(const std::string&);
