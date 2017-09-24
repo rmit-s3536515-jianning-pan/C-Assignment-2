@@ -22,9 +22,12 @@ bool draughts::model::player::movePiece(int sX,int sY,int eX,int eY)
 									 }
 									 if(found==false) // if the end location is not found
 									 {
-										 p->setX(eX);
+										 if((eX>0&&eX<9)&&(eY>0 &&eY<9)){ // make sure it doesnt go beyond the board
+											 p->setX(eX);
 										 p->setY(eY);
 										 return true;
+										 }
+										 
 									 }
 								 }
 								 /*
