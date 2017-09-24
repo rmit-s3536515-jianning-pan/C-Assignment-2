@@ -26,12 +26,50 @@ namespace draughts
 					{
 							_pieces.reserve(12); //reserve 12 pieces for this vector
 					}
+					bool checkPiece(int sX,int sY)
+					{
+						for(auto& ps : _pieces)
+						{
+							if(ps->getX()==sX && ps->getY()==sY)
+							{
+								return true;
+							}
+						}
+						return false;
+					}
 					
-					bool movePiece(int sX,int sY,int eX,int eY);
-					 
-					void setPieces(); //set the pieces 
-					char getPiece(int x,int y);
-					void setPlayerType(playerType id){_id=id;}
+					void removePiece(int x,int y) //remove piece
+					{
+						for(auto & ps : _pieces)
+						{
+							if(ps->getX()==x && ps->getY()==y)
+							{
+								//ps->setX(0);
+								//ps->setY(0);
+								_pieces.erase(std::remove(_pieces.begin(),_pieces.end(),ps),_pieces.end());
+								//ps.reset(nullptr); //remove the ptr. tested receive segmenation fault
+								break;
+							}
+						}
+					}
+					
+					void updatePieceLocation(int sx,int sy,int ex,int ey) //update to the new location
+					{
+						for(auto & ps : _pieces)
+						{
+							if(ps->getX()==sx && ps->getY()==sy)
+							{
+								ps->setX(ex);
+								ps->setY(ey);
+								break;
+							}
+						}
+					}
+					bool movePiece(int sX,int sY,int eX,int eY); //move the specified piece
+					std::vector<std::unique_ptr<piece>>& getPieces(){return _pieces;}
+					void setPieces(); //initialize the pieces at the start based on the color
+					char getPiece(int x,int y); // get the token 
+					void setPlayerType(playerType id){_id=id;} //set playerType 
 					int getPlayernum(){return playernum;} //get the player number
 					void setPlayernum(int num){playernum=num;}//set the playernum
 					std::string getName(){return _name;} //get the player name
