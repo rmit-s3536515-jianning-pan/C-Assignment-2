@@ -123,7 +123,7 @@ void draughts::model::model::make_move(int playernum,
 
 void draughts::model::model::add_player(const std::string& p) // modified
 {
-	instance ->getPlayers().push_back(std::make_unique<player>(p));
+	players.push_back(std::make_unique<player>(p));
 }
 
 bool draughts::model::model::player_exists(const std::string& pname)
