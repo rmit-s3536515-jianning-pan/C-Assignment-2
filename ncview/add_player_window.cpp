@@ -14,11 +14,27 @@ void draughts::ncview::add_player_window::activate(void)
             name = window::get_input(
                "Please enter the name for the new player"  
             );
-            draughts::model::model * themodel = 
-                draughts::model::model::get_instance();
-            themodel->add_player(name);
+			draughts::model::model * themodel = 
+             draughts::model::model::get_instance();
+			if(themodel->getPlayers().empty()){
+				success = true;
+			}
+			else{
+				for(auto& p : themodel->getPlayers())
+				{
+					if(p->getName()==name) //check the duplicate name
+					{
+						success= false;
+						break;
+					}
+					else{
+						success = true;
+						}
+				}
+			}
+            if(success) themodel->add_player(name); //if no duplicate name , add player
 		    
-            success = true;
+          //  success = true;
         }
         catch(std::exception& ex)
         {
