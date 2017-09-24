@@ -106,7 +106,7 @@ void draughts::model::model::make_move(int playernum,
 	int anotherPlayernum = 0;
 	bool found = false;
 	for(auto& p : selected){
-		std::cout << p->getPlayernum() <<" " <<playernum << std::endl; // ???? playernum is -1 ???
+		//std::cout << p->getPlayernum() <<" " <<playernum << std::endl; // ???? playernum is -1 ???
 		if(p->getPlayernum()==playernum) //if the player number is equal to the current player
 		{
 			std::cout << "in the model class at make_move function , with the correct number" << std::endl;
