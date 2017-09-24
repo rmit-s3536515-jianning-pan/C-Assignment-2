@@ -26,6 +26,13 @@ CMakeFiles/As2.dir/model/model.cpp.o: model/piece.h
 CMakeFiles/As2.dir/model/model.cpp.o: model/player.h
 CMakeFiles/As2.dir/model/model.cpp.o: model/playerType.h
 
+CMakeFiles/As2.dir/model/player.cpp.o: direction.h
+CMakeFiles/As2.dir/model/player.cpp.o: model/normalPiece.h
+CMakeFiles/As2.dir/model/player.cpp.o: model/piece.h
+CMakeFiles/As2.dir/model/player.cpp.o: model/player.cpp
+CMakeFiles/As2.dir/model/player.cpp.o: model/player.h
+CMakeFiles/As2.dir/model/player.cpp.o: model/playerType.h
+
 CMakeFiles/As2.dir/nc_controller/command.cpp.o: nc_controller/command.cpp
 CMakeFiles/As2.dir/nc_controller/command.cpp.o: nc_controller/command.h
 CMakeFiles/As2.dir/nc_controller/command.cpp.o: ncview/add_player_window.h

@@ -1,5 +1,5 @@
 #include "model.h"
-#include <fstream>
+
 #include <algorithm>
 std::unique_ptr<draughts::model::model> draughts::model::model::instance =
 nullptr;
@@ -103,17 +103,22 @@ char draughts::model::model::get_token(int x ,int y)
 void draughts::model::model::make_move(int playernum,
         int startx, int starty, int endx, int endy)
 {
-	//bool found = false;
+	int anotherPlayernum = 0;
+	bool found = false;
 	for(auto& p : selected){
 		std::cout << p->getPlayernum() <<" " <<playernum << std::endl; // ???? playernum is -1 ???
 		if(p->getPlayernum()==playernum) //if the player number is equal to the current player
 		{
 			std::cout << "in the model class at make_move function , with the correct number" << std::endl;
-			p->movePiece(startx,starty,endx,endy);
-			break;
+			found = p->movePiece(startx,starty,endx,endy);
+			
+		}
+		else{
+			anotherPlayernum = p->getPlayernum();
 		}
 		std::cout << "in the model class at make_move function" << std::endl;
 	}
+	if(found) currentId = anotherPlayernum;
 }
 
 void draughts::model::model::add_player(const std::string& p) // modified

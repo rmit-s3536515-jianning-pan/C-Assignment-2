@@ -21,8 +21,6 @@ model/model.h
 /home/sl5/S3536515/C++/Assignment/As2/model/model.cpp
 model.h
 /home/sl5/S3536515/C++/Assignment/As2/model/model.h
-fstream
--
 algorithm
 -
 
@@ -65,6 +63,10 @@ iostream
 -
 playerType.h
 /home/sl5/S3536515/C++/Assignment/As2/model/playerType.h
+
+/home/sl5/S3536515/C++/Assignment/As2/model/player.cpp
+player.h
+/home/sl5/S3536515/C++/Assignment/As2/model/player.h
 
 /home/sl5/S3536515/C++/Assignment/As2/model/player.h
 iostream

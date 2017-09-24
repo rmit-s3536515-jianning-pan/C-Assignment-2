@@ -162,6 +162,30 @@ model/model.cpp.s:
 	$(MAKE) -f CMakeFiles/As2.dir/build.make CMakeFiles/As2.dir/model/model.cpp.s
 .PHONY : model/model.cpp.s
 
+model/player.o: model/player.cpp.o
+.PHONY : model/player.o
+
+# target to build an object file
+model/player.cpp.o:
+	$(MAKE) -f CMakeFiles/As2.dir/build.make CMakeFiles/As2.dir/model/player.cpp.o
+.PHONY : model/player.cpp.o
+
+model/player.i: model/player.cpp.i
+.PHONY : model/player.i
+
+# target to preprocess a source file
+model/player.cpp.i:
+	$(MAKE) -f CMakeFiles/As2.dir/build.make CMakeFiles/As2.dir/model/player.cpp.i
+.PHONY : model/player.cpp.i
+
+model/player.s: model/player.cpp.s
+.PHONY : model/player.s
+
+# target to generate assembly for a file
+model/player.cpp.s:
+	$(MAKE) -f CMakeFiles/As2.dir/build.make CMakeFiles/As2.dir/model/player.cpp.s
+.PHONY : model/player.cpp.s
+
 nc_controller/command.o: nc_controller/command.cpp.o
 .PHONY : nc_controller/command.o
 
@@ -393,6 +417,9 @@ help:
 	@echo "... model/model.o"
 	@echo "... model/model.i"
 	@echo "... model/model.s"
+	@echo "... model/player.o"
+	@echo "... model/player.i"
+	@echo "... model/player.s"
 	@echo "... nc_controller/command.o"
 	@echo "... nc_controller/command.i"
 	@echo "... nc_controller/command.s"

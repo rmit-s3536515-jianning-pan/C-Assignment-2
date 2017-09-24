@@ -23,7 +23,7 @@ namespace draughts
 				int getY(){return y;}
 				void setY(int newY){y=newY;}
 				char getToken(){return token;}
-				virtual void move(int,int,int,int)=0;
+				virtual bool move(int,int,int,int)=0;
 				//virtual char draw()=0;
 		};
 	}

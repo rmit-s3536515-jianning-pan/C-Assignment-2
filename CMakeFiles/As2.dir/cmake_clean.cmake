@@ -10,6 +10,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/As2.dir/nc_controller/controller.cpp.o"
   "CMakeFiles/As2.dir/nc_controller/command.cpp.o"
   "CMakeFiles/As2.dir/model/model.cpp.o"
+  "CMakeFiles/As2.dir/model/player.cpp.o"
   "As2.pdb"
   "As2"
 )

@@ -305,6 +305,29 @@ CMakeFiles/As2.dir/model/model.cpp.o.provides: CMakeFiles/As2.dir/model/model.cp
 
 CMakeFiles/As2.dir/model/model.cpp.o.provides.build: CMakeFiles/As2.dir/model/model.cpp.o
 
+CMakeFiles/As2.dir/model/player.cpp.o: CMakeFiles/As2.dir/flags.make
+CMakeFiles/As2.dir/model/player.cpp.o: model/player.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sl5/S3536515/C++/Assignment/As2/CMakeFiles $(CMAKE_PROGRESS_12)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/As2.dir/model/player.cpp.o"
+	/opt/rh/devtoolset-6/root/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/As2.dir/model/player.cpp.o -c /home/sl5/S3536515/C++/Assignment/As2/model/player.cpp
+
+CMakeFiles/As2.dir/model/player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/As2.dir/model/player.cpp.i"
+	/opt/rh/devtoolset-6/root/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sl5/S3536515/C++/Assignment/As2/model/player.cpp > CMakeFiles/As2.dir/model/player.cpp.i
+
+CMakeFiles/As2.dir/model/player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/As2.dir/model/player.cpp.s"
+	/opt/rh/devtoolset-6/root/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sl5/S3536515/C++/Assignment/As2/model/player.cpp -o CMakeFiles/As2.dir/model/player.cpp.s
+
+CMakeFiles/As2.dir/model/player.cpp.o.requires:
+.PHONY : CMakeFiles/As2.dir/model/player.cpp.o.requires
+
+CMakeFiles/As2.dir/model/player.cpp.o.provides: CMakeFiles/As2.dir/model/player.cpp.o.requires
+	$(MAKE) -f CMakeFiles/As2.dir/build.make CMakeFiles/As2.dir/model/player.cpp.o.provides.build
+.PHONY : CMakeFiles/As2.dir/model/player.cpp.o.provides
+
+CMakeFiles/As2.dir/model/player.cpp.o.provides.build: CMakeFiles/As2.dir/model/player.cpp.o
+
 # Object files for target As2
 As2_OBJECTS = \
 "CMakeFiles/As2.dir/main_noncurses.cpp.o" \
@@ -317,7 +340,8 @@ As2_OBJECTS = \
 "CMakeFiles/As2.dir/ncview/add_player_window.cpp.o" \
 "CMakeFiles/As2.dir/nc_controller/controller.cpp.o" \
 "CMakeFiles/As2.dir/nc_controller/command.cpp.o" \
-"CMakeFiles/As2.dir/model/model.cpp.o"
+"CMakeFiles/As2.dir/model/model.cpp.o" \
+"CMakeFiles/As2.dir/model/player.cpp.o"
 
 # External object files for target As2
 As2_EXTERNAL_OBJECTS =
@@ -333,6 +357,7 @@ As2: CMakeFiles/As2.dir/ncview/add_player_window.cpp.o
 As2: CMakeFiles/As2.dir/nc_controller/controller.cpp.o
 As2: CMakeFiles/As2.dir/nc_controller/command.cpp.o
 As2: CMakeFiles/As2.dir/model/model.cpp.o
+As2: CMakeFiles/As2.dir/model/player.cpp.o
 As2: CMakeFiles/As2.dir/build.make
 As2: CMakeFiles/As2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable As2"
@@ -353,6 +378,7 @@ CMakeFiles/As2.dir/requires: CMakeFiles/As2.dir/ncview/add_player_window.cpp.o.r
 CMakeFiles/As2.dir/requires: CMakeFiles/As2.dir/nc_controller/controller.cpp.o.requires
 CMakeFiles/As2.dir/requires: CMakeFiles/As2.dir/nc_controller/command.cpp.o.requires
 CMakeFiles/As2.dir/requires: CMakeFiles/As2.dir/model/model.cpp.o.requires
+CMakeFiles/As2.dir/requires: CMakeFiles/As2.dir/model/player.cpp.o.requires
 .PHONY : CMakeFiles/As2.dir/requires
 
 CMakeFiles/As2.dir/clean:
