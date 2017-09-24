@@ -21,7 +21,7 @@ namespace draughts
         {
             static std::unique_ptr<model> instance;
 			
-			std::vector<std::unique_ptr<player>> players; //store 2 player 
+			std::vector<std::unique_ptr<player>> players; //store full players 
 			
 			std::vector<std::unique_ptr<player>> selected; // store the selected players
 			

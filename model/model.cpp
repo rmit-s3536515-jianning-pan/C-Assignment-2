@@ -111,6 +111,29 @@ void draughts::model::model::make_move(int playernum,
 		{
 			std::cout << "in the model class at make_move function , with the correct number" << std::endl;
 			found = p->movePiece(startx,starty,endx,endy);
+			if(found){ //it means player can move , but didn't check the oppent's pieces yet 
+				for(auto& s : selected) //wanna check the oppoent's pieces
+				{
+					if(s->getPlayernum()!=playernum) //it is oppoent 
+					{
+						if(s->checkPiece(endx,endy)){ //if opponent piece is found 
+							int diffX = endx - startx;
+							int diffY = endy - starty;
+							int newX = diffX+endx;
+							int newY = diffY + endy;
+							if(!s->checkPiece(newX,newY))// if new location is not found , it means player can jump
+							{
+								s->removePiece(endx,endy);
+								p->updatePieceLocation(startx,starty,newX,newY);
+							}
+						}
+						else{
+							p->updatePieceLocation(startx,starty,endx,endy); // update if end location is not found from enemy
+						}
+						
+					}
+				}
+			}
 			
 		}
 		else{
