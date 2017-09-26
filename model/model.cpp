@@ -54,9 +54,13 @@ void draughts::model::model::start_game(int plr1, int plr2) // ​starts​ ​a
 	instance ->setCurrentId(plr1);
 }
 
-int draughts::model::model::get_winner() //if the player get 12 score in total, return 1 else return -1
+int draughts::model::model::get_winner() //if the player get 12 score in total
 {
+	if(get_player_score(currentId)==12){
+		return 1;
+	}
 	
+	/*
 	for(auto & p : selected)
 	{
 		if(p->getPlayernum()==currentId){
@@ -65,7 +69,7 @@ int draughts::model::model::get_winner() //if the player get 12 score in total, 
 				return 1;
 			}
 		}
-	}
+	}*/
     return EOF;
 }
 
@@ -106,46 +110,24 @@ void draughts::model::model::make_move(int playernum,
 	int anotherPlayernum = 0;
 	bool found = false;
 	for(auto& p : selected){
-		//std::cout << p->getPlayernum() <<" " <<playernum << std::endl; // ???? playernum is -1 ???
 		if(p->getPlayernum()==playernum) //if the player number is equal to the current player
 		{
-			std::cout << "in the model class at make_move function , with the correct number" << std::endl;
-			found = p->movePiece(startx,starty,endx,endy);
-			if(found){ //it means player can move , but didn't check the oppent's pieces yet 
 				for(auto& s : selected) //wanna check the oppoent's pieces
 				{
-					if(s->getPlayernum()!=playernum) //it is oppoent 
-					{
-						if(s->checkPiece(endx,endy)){ //if opponent piece is found 
-							int diffX = endx - startx;
-							int diffY = endy - starty;
-							int newX = diffX+endx;
-							int newY = diffY + endy;
-							if(!s->checkPiece(newX,newY))// if new location is not found , it means player can jump
-							{
-								s->removePiece(endx,endy);
-								p->updatePieceLocation(startx,starty,newX,newY);
-							}
-						}
-						else{
-							p->updatePieceLocation(startx,starty,endx,endy); // update if end location is not found from enemy
-						}
-						
-					}
+					if(s->getPlayernum()!=playernum)
+						found = p->movePiece(s,startx,starty,endx,endy);
 				}
-			}
-			
 		}
 		else{
 			anotherPlayernum = p->getPlayernum();
 		}
-		std::cout << "in the model class at make_move function" << std::endl;
 	}
-	if(found) currentId = anotherPlayernum;
+	if(found)currentId = anotherPlayernum;
 }
 
 void draughts::model::model::add_player(const std::string& p) // modified
 {
+	
 	players.push_back(std::make_unique<player>(p));
 }
 
