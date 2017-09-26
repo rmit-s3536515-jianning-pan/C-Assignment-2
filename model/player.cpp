@@ -1,49 +1,78 @@
 #include "player.h"
 
-bool draughts::model::player::movePiece(int sX,int sY,int eX,int eY)
+bool draughts::model::player::movePiece(std::unique_ptr<player>& player2, int sX,int sY,int eX,int eY)
 {
+	
 	std::cout <<"in the player class : move" << sX << sY<< eX << eY<<std::endl;
 						 bool correct = false;
 						 for(auto & p : _pieces)
-						 {
+						 { 
 							 if(p->getX()==sX && p->getY()==sY) //if the start location is found 
 							 {
 								 correct = p->move(sX,sY,eX,eY); //check if it is valid move
 								 if(correct) //if it is valid move , then check the finish location 
 								 {
-									 bool found = false;
-									 for(auto& piece : _pieces)
-									 {
-										 if(piece->getX()==eX && piece->getY()==eY) //check if end x and y exists in the _pieces
-										 {
-											 found = true; //if the end location is found 
-											 break;
-										 }
+									 if(!checkPiece(eX,eY)){
+										 if(player2->checkPiece(eX,eY))//the locations has enemy piece
+											{
+												int nx = eX-sX;
+												int ny = eY-sY;
+												int npx = eX + nx;
+												int npy = eY + ny;
+												if(player2->checkPiece(npx,npy) || checkPiece(npx,npy))//if the new position is not empty
+												{ //not able to move
+													return false;
+												}
+												else{
+													if(!isBeyondBoard(npx,npy))//if within the board
+													{
+														player2->removePiece(eX,eY);
+														updatePieceLocation(sX,sY,npx,npy); //it is jump over enemy piece
+														_score++;
+													}
+													else return false; //not inside the board 
+													
+													//below code is to check if it has multiple jump 
+													if(isPieceAKing(npx,npy)) // if the piece is a king
+													{std::cout << "both side \n";
+														if(checkTopLeftForJumping(player2,npx,npy)  || checkTopRightForJumping(player2,npx,npy)
+															|| checkBotLeftForJumping(player2,npx,npy) || checkBotRightForJumping(player2,npx,npy))
+														{
+															return false;
+														}
+													}
+													else if(isBlack()){
+														std::cout << "Black side \n";
+															if(checkBotLeftForJumping(player2,npx,npy) || checkBotRightForJumping(player2,npx,npy))
+														{
+															std::cout <<"inside the black side \n";
+															return false; 
+														}
+														
+													}
+													else if(isWhite()){
+														std::cout <<"white side \n";
+														if(checkTopLeftForJumping(player2,npx,npy) || checkTopRightForJumping(player2,npx,npy))
+														{
+															return false; 
+														}
+													
+													}
+											
+												}
+											}
+											else{ // if no piece in both player, it is simple move
+												updatePieceLocation(sX,sY,eX,eY);
+												
+											}
+											return true;
 									 }
-									 if(found==false) // if the end location is not found
-									 {
-										 if((eX>0&&eX<9)&&(eY>0 &&eY<9)){ // make sure it doesnt go beyond the board
-											 //p->setX(eX);
-										// p->setY(eY);
-										 return true;
-										 }
-										 
-									 }
-								 }
-								 /*
-								 if(correct){
-									 //_pieces.erase(std::remove(_pieces.begin(),_pieces.end(),p),_pieces.end());
-									 //_pieces.push_back(std::make_unique<normalPiece>(eX,eY,_id));
-									// p.reset(new normalPiece(eX,eY,_id));
-									 
-								 }*/
-								 std::cout <<"correct move" <<std::endl;
+							 } 
+							 std::cout <<"correct move" <<std::endl;
 								 break;// since already found the location , break out the loop
-							 }
 						 }
-						 return false;
-						 //return correct;
-
+				} 
+		return false;
 }
 
 void draughts::model::player::setPieces()

@@ -1,6 +1,5 @@
 #include <iostream>
 #include "piece.h"
-#include "../direction.h"
 #pragma once
 
 namespace draughts
@@ -9,8 +8,6 @@ namespace draughts
     {
 			class normalPiece : public piece
 			{
-				private:
-					direction dir;
 				public:
 				normalPiece(int _x,int _y,playerType id) : piece(_x,_y,id)
 				{
@@ -28,6 +25,7 @@ namespace draughts
 				}
 					  bool move(int sX,int sY,int eX,int eY) override
 					{
+						if(!(eX>0&&eX<9) || !(eY>0 &&eY<9)) return false;
 						if(sX+static_cast<int>(dir)==eX){ //it is going correct direction
 							if(abs(eY-sY)==1){ // if it is 1, it means moving diagonaly
 								//x = eX; //change the x location to new X location
@@ -41,6 +39,7 @@ namespace draughts
 						return false;
 						
 					}
+					
 					
 			};
 	}
