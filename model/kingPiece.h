@@ -31,11 +31,11 @@ namespace draughts
 							if(abs(eY-sY)==1){ // if it is 1, it means moving diagonaly
 								//x = eX; //change the x location to new X location
 								//y = eY; //change the y location to new y location
-								 std::cout <<"in the piece class , valid move" <<std::endl;
+								 //std::cout <<"in the piece class , valid move" <<std::endl;
 								 
 								return true; //this is a valid move
 							}
-							std::cout <<"in the piece class , Notvalid move" <<std::endl;
+							//std::cout <<"in the piece class , Notvalid move" <<std::endl;
 						}
 						return false;
 						

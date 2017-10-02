@@ -59,17 +59,19 @@ int draughts::model::model::get_winner() //if the player get 12 score in total
 	if(get_player_score(currentId)==12){
 		return 1;
 	}
-	
-	/*
+	else
+	{
 	for(auto & p : selected)
 	{
-		if(p->getPlayernum()==currentId){
+		if(p->getPlayernum()!=currentId){
 			if(p->getScore()==12)
 			{
 				return 1;
 			}
 		}
-	}*/
+	}
+	}
+		
     return EOF;
 }
 
@@ -114,6 +116,7 @@ void draughts::model::model::make_move(int playernum,
 		{
 				for(auto& s : selected) //wanna check the oppoent's pieces
 				{
+					//std::cout << "check oppoent's pieces"<<std::endl;
 					if(s->getPlayernum()!=playernum)
 						found = p->movePiece(s,startx,starty,endx,endy);
 				}
@@ -123,6 +126,9 @@ void draughts::model::model::make_move(int playernum,
 		}
 	}
 	if(found)currentId = anotherPlayernum;
+	else{
+		std::cout<< std::endl << "Invalid Move, Please choose another coordinate!" <<std::endl;
+	}
 }
 
 void draughts::model::model::add_player(const std::string& p) // modified

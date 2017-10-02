@@ -34,29 +34,31 @@ bool draughts::model::player::movePiece(std::unique_ptr<player>& player2, int sX
 													
 													//below code is to check if it has multiple jump 
 													if(isPieceAKing(npx,npy)) // if the piece is a king
-													{std::cout << "both side \n";
+													{//std::cout << "both side \n";
 														if(checkTopLeftForJumping(player2,npx,npy)  || checkTopRightForJumping(player2,npx,npy)
 															|| checkBotLeftForJumping(player2,npx,npy) || checkBotRightForJumping(player2,npx,npy))
 														{
 															return false;
-														}
+														}else std::cout <<"Double Jump is available" <<std::endl;
+
 													}
 													else if(isBlack()){
-														std::cout << "Black side \n";
+														//std::cout << "Black side \n";
 															if(checkBotLeftForJumping(player2,npx,npy) || checkBotRightForJumping(player2,npx,npy))
 														{
-															std::cout <<"inside the black side \n";
+															//std::cout <<"inside the black side \n";
 															return false; 
-														}
+														}else std::cout <<"Double Jump is available" <<std::endl;
+
 														
 													}
 													else if(isWhite()){
-														std::cout <<"white side \n";
+														//std::cout <<"white side \n";
 														if(checkTopLeftForJumping(player2,npx,npy) || checkTopRightForJumping(player2,npx,npy))
 														{
 															return false; 
 														}
-													
+														else std::cout <<"Double Jump is available" <<std::endl;
 													}
 											
 												}
@@ -68,7 +70,7 @@ bool draughts::model::player::movePiece(std::unique_ptr<player>& player2, int sX
 											return true;
 									 }
 							 } 
-							 std::cout <<"correct move" <<std::endl;
+
 								 break;// since already found the location , break out the loop
 						 }
 				} 
