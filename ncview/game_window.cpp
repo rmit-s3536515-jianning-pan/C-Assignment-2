@@ -34,7 +34,7 @@ void draughts::ncview::game_window::activate(void)
             themodel->make_move(playernum, move_coords.first.first, 
                 move_coords.first.second, move_coords.second.first,
                 move_coords.second.second);
-			if(themodel->get_winner()==1)
+				if(themodel->get_winner()==1)
 				{
 					quit = true;
 					std::cout<< "The winner is " << themodel->get_player_name(themodel->get_current_player()) <<std::endl<<std::endl;

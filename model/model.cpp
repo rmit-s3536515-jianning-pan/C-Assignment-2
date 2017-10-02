@@ -125,8 +125,11 @@ void draughts::model::model::make_move(int playernum,
 			anotherPlayernum = p->getPlayernum();
 		}
 	}
-	if(found)currentId = anotherPlayernum;
-	else{
+	if(found){
+		if(get_player_score(playernum)!=12){
+			currentId = anotherPlayernum;
+		}
+	}else{
 		std::cout<< std::endl << "Invalid Move, Please choose another coordinate!" <<std::endl;
 	}
 }
