@@ -3,6 +3,7 @@
 
 CMakeFiles/As2.dir/main_noncurses.cpp.o: direction.h
 CMakeFiles/As2.dir/main_noncurses.cpp.o: main_noncurses.cpp
+CMakeFiles/As2.dir/main_noncurses.cpp.o: model/kingPiece.h
 CMakeFiles/As2.dir/main_noncurses.cpp.o: model/model.h
 CMakeFiles/As2.dir/main_noncurses.cpp.o: model/normalPiece.h
 CMakeFiles/As2.dir/main_noncurses.cpp.o: model/piece.h
@@ -19,6 +20,7 @@ CMakeFiles/As2.dir/main_noncurses.cpp.o: ncview/ui.h
 CMakeFiles/As2.dir/main_noncurses.cpp.o: ncview/window.h
 
 CMakeFiles/As2.dir/model/model.cpp.o: direction.h
+CMakeFiles/As2.dir/model/model.cpp.o: model/kingPiece.h
 CMakeFiles/As2.dir/model/model.cpp.o: model/model.cpp
 CMakeFiles/As2.dir/model/model.cpp.o: model/model.h
 CMakeFiles/As2.dir/model/model.cpp.o: model/normalPiece.h
@@ -27,6 +29,7 @@ CMakeFiles/As2.dir/model/model.cpp.o: model/player.h
 CMakeFiles/As2.dir/model/model.cpp.o: model/playerType.h
 
 CMakeFiles/As2.dir/model/player.cpp.o: direction.h
+CMakeFiles/As2.dir/model/player.cpp.o: model/kingPiece.h
 CMakeFiles/As2.dir/model/player.cpp.o: model/normalPiece.h
 CMakeFiles/As2.dir/model/player.cpp.o: model/piece.h
 CMakeFiles/As2.dir/model/player.cpp.o: model/player.cpp
@@ -44,6 +47,7 @@ CMakeFiles/As2.dir/nc_controller/command.cpp.o: ncview/ui.h
 CMakeFiles/As2.dir/nc_controller/command.cpp.o: ncview/window.h
 
 CMakeFiles/As2.dir/nc_controller/controller.cpp.o: direction.h
+CMakeFiles/As2.dir/nc_controller/controller.cpp.o: model/kingPiece.h
 CMakeFiles/As2.dir/nc_controller/controller.cpp.o: model/model.h
 CMakeFiles/As2.dir/nc_controller/controller.cpp.o: model/normalPiece.h
 CMakeFiles/As2.dir/nc_controller/controller.cpp.o: model/piece.h
@@ -61,6 +65,7 @@ CMakeFiles/As2.dir/nc_controller/controller.cpp.o: ncview/ui.h
 CMakeFiles/As2.dir/nc_controller/controller.cpp.o: ncview/window.h
 
 CMakeFiles/As2.dir/ncview/add_player_window.cpp.o: direction.h
+CMakeFiles/As2.dir/ncview/add_player_window.cpp.o: model/kingPiece.h
 CMakeFiles/As2.dir/ncview/add_player_window.cpp.o: model/model.h
 CMakeFiles/As2.dir/ncview/add_player_window.cpp.o: model/normalPiece.h
 CMakeFiles/As2.dir/ncview/add_player_window.cpp.o: model/piece.h
@@ -77,6 +82,7 @@ CMakeFiles/As2.dir/ncview/add_player_window.cpp.o: ncview/ui.h
 CMakeFiles/As2.dir/ncview/add_player_window.cpp.o: ncview/window.h
 
 CMakeFiles/As2.dir/ncview/game_window.cpp.o: direction.h
+CMakeFiles/As2.dir/ncview/game_window.cpp.o: model/kingPiece.h
 CMakeFiles/As2.dir/ncview/game_window.cpp.o: model/model.h
 CMakeFiles/As2.dir/ncview/game_window.cpp.o: model/normalPiece.h
 CMakeFiles/As2.dir/ncview/game_window.cpp.o: model/piece.h
@@ -119,6 +125,7 @@ CMakeFiles/As2.dir/ncview/player_selection_window.cpp.o: ncview/ui.h
 CMakeFiles/As2.dir/ncview/player_selection_window.cpp.o: ncview/window.h
 
 CMakeFiles/As2.dir/ncview/ui.cpp.o: direction.h
+CMakeFiles/As2.dir/ncview/ui.cpp.o: model/kingPiece.h
 CMakeFiles/As2.dir/ncview/ui.cpp.o: model/model.h
 CMakeFiles/As2.dir/ncview/ui.cpp.o: model/normalPiece.h
 CMakeFiles/As2.dir/ncview/ui.cpp.o: model/piece.h
@@ -136,6 +143,7 @@ CMakeFiles/As2.dir/ncview/ui.cpp.o: ncview/ui.h
 CMakeFiles/As2.dir/ncview/ui.cpp.o: ncview/window.h
 
 CMakeFiles/As2.dir/ncview/window.cpp.o: direction.h
+CMakeFiles/As2.dir/ncview/window.cpp.o: model/kingPiece.h
 CMakeFiles/As2.dir/ncview/window.cpp.o: model/model.h
 CMakeFiles/As2.dir/ncview/window.cpp.o: model/normalPiece.h
 CMakeFiles/As2.dir/ncview/window.cpp.o: model/piece.h

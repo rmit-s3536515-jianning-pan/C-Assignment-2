@@ -4,6 +4,7 @@
 CMakeFiles/As2.dir/main_noncurses.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/direction.h
  /home/sl5/S3536515/C++/Assignment/As2/main_noncurses.cpp
+ /home/sl5/S3536515/C++/Assignment/As2/model/kingPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/model.h
  /home/sl5/S3536515/C++/Assignment/As2/model/normalPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/piece.h
@@ -20,6 +21,7 @@ CMakeFiles/As2.dir/main_noncurses.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/ncview/window.h
 CMakeFiles/As2.dir/model/model.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/direction.h
+ /home/sl5/S3536515/C++/Assignment/As2/model/kingPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/model.cpp
  /home/sl5/S3536515/C++/Assignment/As2/model/model.h
  /home/sl5/S3536515/C++/Assignment/As2/model/normalPiece.h
@@ -28,6 +30,7 @@ CMakeFiles/As2.dir/model/model.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/model/playerType.h
 CMakeFiles/As2.dir/model/player.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/direction.h
+ /home/sl5/S3536515/C++/Assignment/As2/model/kingPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/normalPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/piece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/player.cpp
@@ -45,6 +48,7 @@ CMakeFiles/As2.dir/nc_controller/command.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/ncview/window.h
 CMakeFiles/As2.dir/nc_controller/controller.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/direction.h
+ /home/sl5/S3536515/C++/Assignment/As2/model/kingPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/model.h
  /home/sl5/S3536515/C++/Assignment/As2/model/normalPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/piece.h
@@ -62,6 +66,7 @@ CMakeFiles/As2.dir/nc_controller/controller.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/ncview/window.h
 CMakeFiles/As2.dir/ncview/add_player_window.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/direction.h
+ /home/sl5/S3536515/C++/Assignment/As2/model/kingPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/model.h
  /home/sl5/S3536515/C++/Assignment/As2/model/normalPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/piece.h
@@ -78,6 +83,7 @@ CMakeFiles/As2.dir/ncview/add_player_window.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/ncview/window.h
 CMakeFiles/As2.dir/ncview/game_window.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/direction.h
+ /home/sl5/S3536515/C++/Assignment/As2/model/kingPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/model.h
  /home/sl5/S3536515/C++/Assignment/As2/model/normalPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/piece.h
@@ -120,6 +126,7 @@ CMakeFiles/As2.dir/ncview/player_selection_window.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/ncview/window.h
 CMakeFiles/As2.dir/ncview/ui.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/direction.h
+ /home/sl5/S3536515/C++/Assignment/As2/model/kingPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/model.h
  /home/sl5/S3536515/C++/Assignment/As2/model/normalPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/piece.h
@@ -137,6 +144,7 @@ CMakeFiles/As2.dir/ncview/ui.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/ncview/window.h
 CMakeFiles/As2.dir/ncview/window.cpp.o
  /home/sl5/S3536515/C++/Assignment/As2/direction.h
+ /home/sl5/S3536515/C++/Assignment/As2/model/kingPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/model.h
  /home/sl5/S3536515/C++/Assignment/As2/model/normalPiece.h
  /home/sl5/S3536515/C++/Assignment/As2/model/piece.h

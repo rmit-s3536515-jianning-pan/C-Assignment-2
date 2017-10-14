@@ -21,7 +21,6 @@ namespace draughts
 							token = 'o';
 							dir = direction::UP;
 						}
-					
 				}
 					  bool move(int sX,int sY,int eX,int eY) override
 					{
