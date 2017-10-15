@@ -96,6 +96,12 @@ algorithm
 
 /home/sl5/S3536515/C++/Assignment/As2/model/playerType.h
 
+/home/sl5/S3536515/C++/Assignment/As2/nc_controller/command.cpp
+command.h
+/home/sl5/S3536515/C++/Assignment/As2/nc_controller/command.h
+../ncview/ui.h
+/home/sl5/S3536515/C++/Assignment/As2/ncview/ui.h
+
 /home/sl5/S3536515/C++/Assignment/As2/nc_controller/command.h
 cstdlib
 -
@@ -160,9 +166,23 @@ utility
 boost/algorithm/string.hpp
 -
 
+/home/sl5/S3536515/C++/Assignment/As2/ncview/main_menu.cpp
+main_menu.h
+/home/sl5/S3536515/C++/Assignment/As2/ncview/main_menu.h
+../nc_controller/command.h
+/home/sl5/S3536515/C++/Assignment/As2/nc_controller/command.h
+../nc_controller/controller.h
+/home/sl5/S3536515/C++/Assignment/As2/nc_controller/controller.h
+
 /home/sl5/S3536515/C++/Assignment/As2/ncview/main_menu.h
 menu.h
 /home/sl5/S3536515/C++/Assignment/As2/ncview/menu.h
+
+/home/sl5/S3536515/C++/Assignment/As2/ncview/menu.cpp
+menu.h
+/home/sl5/S3536515/C++/Assignment/As2/ncview/menu.h
+../nc_controller/command.h
+/home/sl5/S3536515/C++/Assignment/As2/nc_controller/command.h
 
 /home/sl5/S3536515/C++/Assignment/As2/ncview/menu.h
 window.h
@@ -175,6 +195,12 @@ string
 -
 iostream
 -
+
+/home/sl5/S3536515/C++/Assignment/As2/ncview/player_selection_window.cpp
+player_selection_window.h
+/home/sl5/S3536515/C++/Assignment/As2/ncview/player_selection_window.h
+../nc_controller/controller.h
+/home/sl5/S3536515/C++/Assignment/As2/nc_controller/controller.h
 
 /home/sl5/S3536515/C++/Assignment/As2/ncview/player_selection_window.h
 window.h
