@@ -1,3 +1,11 @@
+/***********************************************************************
+ * COSC1254 - Programming Using C++
+ * Semester 2 2017 Assignment #2
+ * Full Name        : Yixuan Zhang, Jianning Pan
+ * Student Number   : s3380293, s3536515
+ * Course Code      : COSC1254
+ **********************************************************************/
+ 
 #include "main_menu.h"
 #include "../nc_controller/command.h"
 #include "../nc_controller/controller.h"
